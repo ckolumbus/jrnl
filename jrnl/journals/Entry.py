@@ -78,7 +78,7 @@ class Entry:
 
     @staticmethod
     def tag_regex(tagsymbols: str) -> re.Pattern:
-        pattern = rf"(?<!\S)([{tagsymbols}][-+*#/\w]+)"
+        pattern = fr"(?<!\S)([{tagsymbols}][-+*#/\w:]+)"
         return re.compile(pattern)
 
     def _parse_tags(self) -> set[str]:
